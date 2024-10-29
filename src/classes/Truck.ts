@@ -42,6 +42,7 @@ class Truck extends Vehicle implements AbleToTow {
     } else {
       this.wheels = wheels;
     }
+    console.log("in truck");
     console.log(this.wheels);
     if (towingCapacity > 0) {
       this.towingCapacity = towingCapacity;
@@ -70,11 +71,24 @@ class Truck extends Vehicle implements AbleToTow {
       console.log(`Make: ${this.make}`);
       console.log(`Model: ${this.model}`);
       console.log(`Year: ${this.year}`);
-      console.log(`weight: ${this.weight}`);
-      console.log(`Top Speed: ${this.topSpeed}`);
+      console.log(`Weight: ${this.weight} lbs`);
+      console.log(`Top Speed: ${this.topSpeed} mph`);
       console.log(`Color: ${this.color}`);
       console.log(`Towing Capacity: ${this.towingCapacity}`);
-      console.log(`Wheels: ${this.wheels}`);
+//      console.log(`Wheels: ${this.wheels}`);
+      // Print details of the wheels
+    console.log(
+      `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
+    );
+    console.log(
+      `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
+    );
+    console.log(
+      `Wheel 3: ${this.wheels[2].getDiameter} inch with a ${this.wheels[2].getTireBrand} tire`
+    );
+    console.log(
+      `Wheel 4: ${this.wheels[3].getDiameter} inch with a ${this.wheels[3].getTireBrand} tire`
+    );
       
     }
     // TODO: The method should log the details of the Truck
