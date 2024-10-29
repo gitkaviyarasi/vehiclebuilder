@@ -42,8 +42,8 @@ class Truck extends Vehicle implements AbleToTow {
     } else {
       this.wheels = wheels;
     }
-    console.log("in truck");
-    console.log(this.wheels);
+   
+
     if (towingCapacity > 0) {
       this.towingCapacity = towingCapacity;
     }
