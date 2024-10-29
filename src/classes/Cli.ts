@@ -12,14 +12,11 @@ class Cli {
   // TODO: You will need to use the Union operator to define additional types for the array
   // TODO: See the AbleToTow interface for an example of how to use the Union operator
   vehicles: (Car | Truck | Motorbike)[];
-
-  //vehicles: (Car) |(Truck) | (Motorbike);
   selectedVehicleVin: string | undefined;
   exit: boolean = false;
 
   // TODO: Update the constructor to accept Truck and Motorbike objects as well
   constructor(vehicles: (Car | Truck | Motorbike)[]) {
- // constructor(vehicles: (Car) |(Truck) | (Motorbike)) {
     this.vehicles = vehicles;
   }
 
@@ -64,7 +61,7 @@ class Cli {
           type: 'list',
           name: 'vehicleType',
           message: 'Select a vehicle type',
-          // TODO: Update the choices array to include Truck and Motorbike  -- k done
+          // TODO: Update the choices array to include Truck and Motorbike 
           choices: ['Car','Truck','Motorbike' ],
         },
       ])
@@ -73,7 +70,7 @@ class Cli {
           // create a car
           this.createCar();
         }
-        // TODO: add statements to create a truck or motorbike if the user selects the respective vehicle type -- k done
+        // TODO: add statements to create a truck or motorbike if the user selects the respective vehicle type 
         else if (answers.vehicleType === 'Truck') { //create a truck
           this.createTruck();
         }
@@ -239,27 +236,7 @@ class Cli {
           name: 'topSpeed',
           message: 'Enter Top Speed',
         },
-        // {
-        //   type: 'input',
-        //   name: 'frontWheelDiameter',
-        //   message: 'Enter Front Wheel Diameter',
-        // },
-        // {
-        //   type: 'input',
-        //   name: 'frontWheelBrand',
-        //   message: 'Enter Front Wheel Brand',
-        // },
-        // {
-        //   type: 'input',
-        //   name: 'rearWheelDiameter',
-        //   message: 'Enter Rear Wheel Diameter',
-        // },
-        // {
-        //   type: 'input',
-        //   name: 'rearWheelBrand',
-        //   message: 'Enter Rear Wheel Brand',
-        // },
-      ])
+            ])
 
       .then((answers) => {
         
@@ -303,7 +280,6 @@ class Cli {
       ])
       .then((answers) => {
         const vehicleToTow1:Car| Motorbike |Truck = answers.vehicleToTow ;
-        // KAvi =--- need to check the below code
         // TODO: check if the selected vehicle is the truck
          // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
         // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another act
@@ -316,9 +292,7 @@ class Cli {
           vehicle.tow(vehicleToTow1);
           this.performActions();
         }
-      }
-
-       
+      }    
       });
   }
 
@@ -443,15 +417,6 @@ class Cli {
         else {  
           console.log('Wheelie action is only available for Motorbike');
         }
-
-          // find the selected vehicle and perform a wheelie
-          // if (this.vehicles[i] === 'Motorbike'){}
-
-          // for (let i = 0; i < this.vehicles.length; i++) {
-          //   if (this.vehicles[i].vin === this.selectedVehicleVin) {
-          //     (this.vehicles[i] as Motorbike).wheelie();
-          //   }
-          // }
           }
         else if (answers.action === 'Select or create another vehicle') {
           // start the cli to return to the initial prompt if the user wants to select or create another vehicle
